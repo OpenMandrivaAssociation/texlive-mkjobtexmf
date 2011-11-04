@@ -1,3 +1,9 @@
+# revision 21345
+# category Package
+# catalog-ctan /support/mkjobtexmf
+# catalog-date 2008-08-22 15:19:59 +0200
+# catalog-license artistic
+# catalog-version 0.7
 Name:		texlive-mkjobtexmf
 Version:	0.7
 Release:	1
@@ -56,6 +62,7 @@ archiving purposes or to speed up following TeX runs.
 %doc %{_texmfdistdir}/source/generic/mkjobtexmf/configure
 %doc %{_texmfdistdir}/source/generic/mkjobtexmf/configure.ac
 %doc %{_texmfdistdir}/source/generic/mkjobtexmf/install-sh
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -72,3 +79,5 @@ mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf texmf-dist %{buildroot}%{_datadir}
 mkdir -p %{buildroot}%{_mandir}/man1
 mv %{buildroot}%{_texmfdir}/doc/man/man1/*.1 %{buildroot}%{_mandir}/man1
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
