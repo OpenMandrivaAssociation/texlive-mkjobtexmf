@@ -1,11 +1,11 @@
-# revision 21345
+# revision 24758
 # category Package
 # catalog-ctan /support/mkjobtexmf
-# catalog-date 2008-08-22 15:19:59 +0200
+# catalog-date 2011-11-16 11:07:17 +0100
 # catalog-license artistic
-# catalog-version 0.7
+# catalog-version 0.8
 Name:		texlive-mkjobtexmf
-Version:	0.7
+Version:	0.8
 Release:	1
 Summary:	Generate a texmf tree for a particular job
 Group:		Publishing
@@ -19,32 +19,30 @@ BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
 Provides:	texlive-mkjobtexmf.bin = %{EVRD}
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
-Conflicts:	texlive-source <= 20110705-3
 
 %description
-The progam mkjobtexmf runs a program and tries to find the used
-file names. Two methods are available, option "-recorder" of
-TeX (Web2C) or the program strace. Then it generates a
-directory with a texmf tree. It checks the found files and
-tries sort them in this texmf tree. It can be used for
-archiving purposes or to speed up following TeX runs.
+The package provides a Perl script, which runs a program and
+tries to find the names of file used. Two methods are
+available, option -recorder of (Web2C) TeX and the program
+strace. Then it generates a directory with a texmf tree. It
+checks the found files and tries sort them in this texmf tree.
+The script may be used for archiving purposes or to speed up
+later TeX runs.
 
 %pre
-    %_texmf_mktexlsr_pre
+    %{_sbindir}/texlive.post
 
 %post
-    %_texmf_mktexlsr_post
+    %{_sbindir}/texlive.post
 
 %preun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
+	%{_sbindir}/texlive.post
     fi
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -52,10 +50,12 @@ archiving purposes or to speed up following TeX runs.
 %{_bindir}/mkjobtexmf
 %{_texmfdistdir}/scripts/mkjobtexmf/mkjobtexmf.pl
 %doc %{_texmfdistdir}/doc/generic/mkjobtexmf/README
+%doc %{_texmfdistdir}/doc/generic/mkjobtexmf/clean-case.pl
 %doc %{_texmfdistdir}/doc/generic/mkjobtexmf/mkjobtexmf.html
 %doc %{_texmfdistdir}/doc/generic/mkjobtexmf/mkjobtexmf.ltx
 %doc %{_texmfdistdir}/doc/generic/mkjobtexmf/mkjobtexmf.pdf
 %doc %{_texmfdistdir}/doc/generic/mkjobtexmf/mkjobtexmf.txt
+%doc %{_texmfdistdir}/doc/generic/mkjobtexmf/version.pl
 %doc %{_mandir}/man1/mkjobtexmf.1*
 %doc %{_texmfdir}/doc/man/man1/mkjobtexmf.man1.pdf
 #- source
