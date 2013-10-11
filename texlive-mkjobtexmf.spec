@@ -1,4 +1,4 @@
-# revision 26313
+# revision 29725
 # category Package
 # catalog-ctan /support/mkjobtexmf
 # catalog-date 2011-11-16 11:07:17 +0100
@@ -6,7 +6,7 @@
 # catalog-version 0.8
 Name:		texlive-mkjobtexmf
 Version:	0.8
-Release:	3
+Release:	4
 Summary:	Generate a texmf tree for a particular job
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/support/mkjobtexmf
@@ -49,7 +49,7 @@ later TeX runs.
 %doc %{_texmfdistdir}/doc/generic/mkjobtexmf/mkjobtexmf.txt
 %doc %{_texmfdistdir}/doc/generic/mkjobtexmf/version.pl
 %doc %{_mandir}/man1/mkjobtexmf.1*
-%doc %{_texmfdir}/doc/man/man1/mkjobtexmf.man1.pdf
+%doc %{_texmfdistdir}/doc/man/man1/mkjobtexmf.man1.pdf
 #- source
 %doc %{_texmfdistdir}/source/generic/mkjobtexmf/Makefile.in
 %doc %{_texmfdistdir}/source/generic/mkjobtexmf/configure
@@ -68,28 +68,6 @@ pushd %{buildroot}%{_bindir}
     ln -sf %{_texmfdistdir}/scripts/mkjobtexmf/mkjobtexmf.pl mkjobtexmf
 popd
 mkdir -p %{buildroot}%{_datadir}
-cp -fpar texmf texmf-dist %{buildroot}%{_datadir}
+cp -fpar texmf-dist %{buildroot}%{_datadir}
 mkdir -p %{buildroot}%{_mandir}/man1
-mv %{buildroot}%{_texmfdir}/doc/man/man1/*.1 %{buildroot}%{_mandir}/man1
-
-
-%changelog
-* Wed Aug 08 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.8-3
-+ Revision: 812606
-- Update to latest release.
-
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.8-2
-+ Revision: 754019
-- Rebuild to reduce used resources
-
-* Fri Dec 09 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.8-1
-+ Revision: 739826
-- texlive-mkjobtexmf
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.7-1
-+ Revision: 719045
-- texlive-mkjobtexmf
-- texlive-mkjobtexmf
-- texlive-mkjobtexmf
-- texlive-mkjobtexmf
-
+mv %{buildroot}%{_texmfdistdir}/doc/man/man1/*.1 %{buildroot}%{_mandir}/man1
