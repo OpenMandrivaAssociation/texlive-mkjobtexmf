@@ -6,7 +6,7 @@
 # catalog-version 0.8
 Name:		texlive-mkjobtexmf
 Version:	0.8
-Release:	9
+Release:	10
 Summary:	Generate a texmf tree for a particular job
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/support/mkjobtexmf
