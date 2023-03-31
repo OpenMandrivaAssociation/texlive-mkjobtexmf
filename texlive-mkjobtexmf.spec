@@ -1,6 +1,6 @@
 Name:		texlive-mkjobtexmf
 Version:	29725
-Release:	1
+Release:	2
 Summary:	Generate a texmf tree for a particular job
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/support/mkjobtexmf
