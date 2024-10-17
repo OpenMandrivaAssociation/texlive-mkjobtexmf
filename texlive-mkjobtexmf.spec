@@ -3,7 +3,7 @@ Version:	29725
 Release:	2
 Summary:	Generate a texmf tree for a particular job
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/support/mkjobtexmf
+URL:		https://www.ctan.org/tex-archive/support/mkjobtexmf
 License:	ARTISTIC
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mkjobtexmf.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mkjobtexmf.doc.r%{version}.tar.xz
