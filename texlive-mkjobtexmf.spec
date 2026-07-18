@@ -1,5 +1,6 @@
 %global tl_name mkjobtexmf
 %global tl_revision 29725
+%global tl_bin_links mkjobtexmf:%{_texmfdistdir}/scripts/mkjobtexmf/mkjobtexmf.pl
 
 Name:		texlive-%{tl_name}
 Epoch:		1
@@ -16,6 +17,8 @@ BuildArch:	noarch
 BuildSystem:	texlive
 Requires:	texlive(mkjobtexmf.bin)
 Provides:	texlive(%{tl_name}) = %{tl_revision}
+Provides:	texlive(%{tl_name}.bin) = %{tl_revision}
+Provides:	texlive-%{tl_name}.bin = %{EVRD}
 
 %description
 The package provides a Perl script, which runs a program and tries to
